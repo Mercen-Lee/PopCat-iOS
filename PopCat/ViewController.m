@@ -9,14 +9,23 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *Cat;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.Cat.image = [UIImage imageNamed:@"Close.png"];
 }
 
+- (IBAction)ButtonTouchEnded:(UIButton *)sender {
+    self.Cat.image = [UIImage imageNamed:@"Close.png"];
+}
+
+- (IBAction)ButtonTouchDown:(UIButton *)sender {
+    self.Cat.image = [UIImage imageNamed:@"Open.png"];
+}
 
 @end
